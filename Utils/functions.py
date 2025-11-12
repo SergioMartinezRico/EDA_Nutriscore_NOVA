@@ -71,6 +71,11 @@ def map_category(category_text):
     return "Otros / Sin Coincidencia"
 
 def cargar_csv(archivo):
+
+    """
+    funcion para cargar un csv en un df
+    requiere meter la ruta del archivo en string
+    """
     try:
         df = pd.read_csv(archivo) 
         print("Dataset cargado correctamente\n")

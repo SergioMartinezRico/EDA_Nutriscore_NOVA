@@ -45,7 +45,7 @@ plt.ylabel('Porcentaje de Productos (%)')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.ylim(0, nutri_df_inicial['Porcentaje'].max() * 1.1)
 
-# Añadir etiquetas de porcentaje encima de las barras
+# añadimos etiquetas de porcentaje encima de las barras
 for p in ax.patches:
     ax.annotate(
         f"{p.get_height():.1f}%", 
@@ -87,7 +87,7 @@ plt.ylabel('Porcentaje de Productos (%)')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.ylim(0, nova_df_inicial['Porcentaje'].max() * 1.1)
 
-# Añadir etiquetas de porcentaje encima de las barras
+# añadimos etiquetas de porcentaje encima de las barras
 for p in ax.patches:
     ax.annotate(
         f"{p.get_height():.1f}%", 
@@ -107,7 +107,7 @@ Hipotesis 1
 # Columnas necesarias para la H1: NutriScore y los 3 nutrientes malos.
 columnas_h1 = ['off:nutriscore_grade', 'sugars_value', 'fat_value', 'salt_value']
 
-# Crear el DataFrame específico eliminando filas con NaN en las columnas clave
+# creamos el DataFrame específico eliminando filas con NaN en las columnas clave
 df_h1 = df.dropna(subset=columnas_h1).copy()
 
 #graficos
@@ -171,10 +171,10 @@ Hipotesis 2
 # Columnas necesarias para la H2: NutriScore numérico y el Grupo NOVA.
 columnas_h2 = ['nutriscore_num', 'nova_group']
 
-# Crear el DataFrame específico eliminando filas con NaN en las columnas clave 
+# creamos el DataFrame específico eliminando filas con NaN en las columnas clave 
 df_h2 = df.dropna(subset=columnas_h2).copy()
 
-# Calcular el NutriScore promedio para cada Grupo NOVA
+# calculamos el NutriScore promedio para cada Grupo NOVA
 promedio_nutriscore_por_nova = df_h2.groupby('nova_group')['nutriscore_num'].mean().reset_index()
 promedio_nutriscore_por_nova.columns = ['Grupo_NOVA', 'NutriScore_Promedio']
 
@@ -206,12 +206,12 @@ plt.savefig("../Img/h2_barplots.jpg")
 
 #graficos pie
 
-# --- 1. Preparación de datos y Cálculo de la Distribución Cruzada ---
+#  Preparación de datos y Cálculo de la Distribución Cruzada 
 # Usamos df_h2_limpio para los cálculos (asumiendo df está cargado)
 df_h2_limpio = df.dropna(subset=['nova_group', 'off:nutriscore_grade']).copy()
 df_h2_limpio['nova_group'] = df_h2_limpio['nova_group'].astype(int) 
 
-# Calcular la tabla cruzada (formato ancho: NOVA en índice, NutriScore en columnas)
+# calculamos la tabla cruzada (formato ancho: NOVA en índice, NutriScore en columnas)
 h2_conteo = pd.crosstab(
     df_h2_limpio['nova_group'], 
     df_h2_limpio['off:nutriscore_grade'], 
@@ -222,7 +222,7 @@ h2_conteo = pd.crosstab(
 h2_plot_df = h2_conteo.reindex(columns=nutri_orden, fill_value=0)
 h2_plot_df.index.name = 'Grupo NOVA'
 
-# 2. Transformación al Formato Largo (Melt) - CLAVE para Seaborn
+#  Transformación al Formato Largo (Melt) -para Seaborn
 h2_long_df = h2_plot_df.reset_index().melt(
     id_vars='Grupo NOVA', 
     var_name='NutriScore', 
@@ -234,17 +234,17 @@ h2_long_df['NutriScore'] = h2_long_df['NutriScore'].str.upper()
 tipo_nova = 1 
 # ----------------------------------------------------------------------------------
 
-# 2. Preparación de datos
+#  Preparación de datos
 data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
 colores_pie = colores
     
-# 3. Generación de la Figura
+#  Generación de la Figura
 fig, ax = plt.subplots(figsize=(8, 8))
 
-# Generar el gráfico de Donut de forma SIMPLE
+# generamos el gráfico de Donut  
 wedges, texts, autotexts = ax.pie(
     data, 
     autopct='%1.1f%%',       # Muestra el porcentaje
@@ -254,7 +254,7 @@ wedges, texts, autotexts = ax.pie(
     pctdistance=0.8                        # Distancia del porcentaje
 )
 
-# 4. Configuración y Leyenda
+#  Configuración y Leyenda
 ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
@@ -263,7 +263,7 @@ for autotext in autotexts:
     autotext.set_fontsize(20) 
 
 
-autotexts[4].set_position((autotexts[4].get_position()[0], autotexts[4].get_position()[1] + 0.15))
+autotexts[4].set_position((autotexts[4].get_position()[0], autotexts[4].get_position()[1] + 0.15)) #para sacar los porcentajes que se pegaban
 
 
 
@@ -283,17 +283,17 @@ plt.savefig("../Img/h2_pie_nova1.jpg")
 tipo_nova = 2 
 # ----------------------------------------------------------------------------------
 
-# 2. Preparación de datos
+#  Preparación de datos
 data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
 colores_pie = colores
     
-# 3. Generación de la Figura
+#  Generación de la Figura
 fig, ax = plt.subplots(figsize=(8, 8))
 
-# Generar el gráfico de Donut de forma SIMPLE
+# generamos el gráfico de Donut  
 wedges, texts, autotexts = ax.pie(
     data, 
     autopct='%1.1f%%',       # Muestra el porcentaje
@@ -303,7 +303,7 @@ wedges, texts, autotexts = ax.pie(
     pctdistance=0.8                        # Distancia del porcentaje
 )
 
-# 4. Configuración y Leyenda
+#  Configuración y Leyenda
 ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
@@ -332,17 +332,17 @@ plt.savefig("../Img/h2_pie_nova2.jpg")
 tipo_nova = 3 
 # ----------------------------------------------------------------------------------
 
-# 2. Preparación de datos
+#  Preparación de datos
 data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
 colores_pie = colores
     
-# 3. Generación de la Figura
+#  Generación de la Figura
 fig, ax = plt.subplots(figsize=(8, 8))
 
-# Generar el gráfico de Donut de forma SIMPLE
+# generamos el gráfico de Donut  
 wedges, texts, autotexts = ax.pie(
     data, 
     autopct='%1.1f%%',       # Muestra el porcentaje
@@ -352,7 +352,7 @@ wedges, texts, autotexts = ax.pie(
     pctdistance=0.8                        # Distancia del porcentaje
 )
 
-# 4. Configuración y Leyenda
+#  Configuración y Leyenda
 ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
@@ -382,17 +382,17 @@ plt.savefig("../Img/h2_pie_nova3.jpg")
 tipo_nova = 4
 # ----------------------------------------------------------------------------------
 
-# 2. Preparación de datos
+# Preparación de datos
 data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
 colores_pie = colores
     
-# 3. Generación de la Figura
+#  Generación de la Figura
 fig, ax = plt.subplots(figsize=(8, 8))
 
-# Generar el gráfico de Donut de forma SIMPLE
+# generamos el gráfico de Donut  
 wedges, texts, autotexts = ax.pie(
     data, 
     autopct='%1.1f%%',       # Muestra el porcentaje
@@ -402,7 +402,7 @@ wedges, texts, autotexts = ax.pie(
     pctdistance=0.8                        # Distancia del porcentaje
 )
 
-# 4. Configuración y Leyenda
+#  Configuración y Leyenda
 ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
@@ -435,23 +435,23 @@ hipotesis 3
 
 umbral_calorias= 100
 
-#Columnas necesarias: NutriScore y Calorías
+# Columnas necesarias: NutriScore y Calorías
 columnas_h3 = ['off:nutriscore_grade', 'energy-kcal_value']
 
-#Crear el DataFrame, primero eliminando NaN en las columnas clave y luego filtrando
+# creamos el DataFrame, primero eliminando NaN en las columnas clave y luego filtrando
 df_h3_temp = df.dropna(subset=columnas_h3).copy()
 
-#Aplicar el filtro de bajo valor calórico. Nos quedamos solo los que tienen menos de 100 calorias
+# aplicamos el filtro de bajo valor calórico. Nos quedamos solo los que tienen menos de 100 calorias
 df_h3 = df_h3_temp[df_h3_temp['energy-kcal_value'] < umbral_calorias].copy()
 
-# Calcular la distribución porcentual en df_h3
+# calculamos la distribución porcentual en df_h3
 distribucion_h3 = (df_h3['off:nutriscore_grade'].value_counts(normalize=True).reindex(nutri_orden) * 100)
 
 distribucion_df = distribucion_h3.rename('Porcentaje').reset_index()
 distribucion_df.columns = ['Grado', 'Porcentaje']
 distribucion_df['Grado'] = distribucion_df['Grado'].str.upper()
 
-#graficos
+# graficos
 
 plt.figure(figsize=(8, 6))
 sns.barplot(
@@ -468,7 +468,7 @@ plt.ylabel('Porcentaje de Productos (%)')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.ylim(0, distribucion_df['Porcentaje'].max() * 1.1)
 
-# Añadir etiquetas de porcentaje encima de las barras
+# añadimos etiquetas de porcentaje encima de las barras
 for index, row in distribucion_df.iterrows():
     plt.text(
         index, 
@@ -485,16 +485,16 @@ Hipotesis 4
 """
 grupo_nova = 4.0
 
-#Columnas necesarias: NutriScore, NOVA, y los 3 nutrientes malos.
+# Columnas necesarias: NutriScore, NOVA, y los 3 nutrientes malos.
 columnas_h4 = ['off:nutriscore_grade', 'nova_group', 'sugars_value', 'fat_value', 'salt_value']
 
-#Crear el DataFrame, primero eliminando NaN en las columnas clave y luego filtrando
+# creamos el DataFrame, primero eliminando NaN en las columnas clave y luego filtrando
 df_h4_temp = df.dropna(subset=columnas_h4).copy()
 
-#Aplicar el filtro para quedarnos solo con los ultraprocesados
+# aplicamos el filtro para quedarnos solo con los ultraprocesados
 df_h4 = df_h4_temp[df_h4_temp['nova_group'] == grupo_nova].copy()
 
-#graficos
+# graficos
 
 #  Definimos la configuración para los gráficos
 nutrientes = ['sugars_value', 'fat_value', 'salt_value']
@@ -552,8 +552,6 @@ nova_df['Grupo NOVA'] = nova_df['nova_group'].astype(int)
 
 #graficos
 
-#graficos
-
 fig, axes = plt.subplots(1, 2, figsize=(15, 6))
 plt.suptitle('H5: Distribución de NutriScore y NOVA en la Lista de la Compra (Alimentos Consumidos)', fontsize=16)
 max_nutri = nutri_df['Porcentaje'].max()
@@ -562,7 +560,7 @@ ymax_nutri = max_nutri * 1.15
 max_nova = nova_df['Porcentaje'].max()
 ymax_nova = max_nova * 1.15 
 
-# GRAFICO 1: DISTRIBUCIÓN NUTRISCORE
+# grafico 1 dist nutriscore
 sns.barplot(
     x='nutriscore_grade', 
     y='Porcentaje', 
@@ -584,7 +582,7 @@ for index, row in nutri_df.iterrows():
         index, row['Porcentaje'] + 1, f"{row['Porcentaje']:.1f}%", color='black', ha="center", fontsize=9
     )
 
-# GRAFICO 2: DISTRIBUCIÓN NOVA
+# grafico 2 dist nova
 sns.barplot(
     x='Grupo NOVA', 
     y='Porcentaje', 
@@ -610,7 +608,7 @@ for index, row in nova_df.iterrows():
 plt.tight_layout(rect=[0, 0, 1, 0.95])
 plt.savefig("../Img/h5_barplots.jpg")
 
-
+print("Proceso finalizado")
 
 
 

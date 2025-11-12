@@ -15,3 +15,4 @@ for i, prod in enumerate(productos, 1):
 # Convertir en DataFrame
 df_api = pd.DataFrame(resultados)
 df_api.to_csv("../Data/resultados_api.csv", index=False)
+print("Datos guardados en ../Data/resultados_api.csv")
