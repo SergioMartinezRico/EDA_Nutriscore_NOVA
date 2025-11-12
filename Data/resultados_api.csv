@@ -1,0 +1,57 @@
+product_input,product_found,brand,category,nutriscore_grade,nova_group,energy_100g,sugars_100g,salt_100g,fat_100g,saturated_fat_100g
+arroz redondo,Arroz redondo,Hacendado,,b,1.0,1439.0,0.5,0.01,1.0,0.2
+pan integral,Pan de molde natural trigo espelta 100% integral,Hacendado,,b,4.0,1010.0,3.7,1.1,4.1,0.8
+panecillo integral,Panecillo 100% integral,Horno de Mercadona,,a,4.0,984.0,3.0,1.2,1.5,0.4
+spaghetti,SPAGHETTI N° 5,"BARILLA NORGE ASbarilla, Barilla, BARILLA NORGE AS",,a,1.0,1521.0,3.5,0.01,2.0,0.5
+carpaccio,Carpaccio Parmesan,Charal,,c,4.0,979.0,0.0,0.39,18.0,3.2
+filete de lomo de cerdo,Filete de lomo cerdo tierno,Dia,,c,,485.0,1.0,1.0,4.7,1.2
+costillas de cordero,Costillas mixtas cordero,BonÀrea,,d,,1067.0,0.0,0.18,21.0,10.0
+filete de pechuga de pavo,Filete de pechuga de pavo,mercadona,,a,,473.6,0.0,0.35,2.0,0.72
+jamon serrano,Jamón Serrano,Incarlopsa,,e,3.0,1038.0,0.5,3.6,12.2,4.6
+callos de ternera,Callos de ternera preparados,Rogusa,,c,4.0,593.0,0.6,1.5,8.0,2.6
+hamburguesa de vacuno,Hamburguesa de lomo de vacuno,Hacendado,,d,4.0,1000.0,0.5,1.08,18.3,8.17
+patas de pollo,Patas limpias de pollo,mercadona,,d,,3063.0,0.0,0.38,10.0,2.2
+filetes de lubina,Filetes de lubina,Hacendado,,a,,406.0,0.0,0.2,2.0,0.5
+varitas de merluza empanadas,Varitas de filetes de merluza empanadas,BonÀrea,,b,,745.0,1.7,0.93,6.7,0.9
+mejillones al natural,Mejillones al natural,Hacendado,,b,3.0,498.0,0.5,1.2775,4.0,1.1
+salmon ahumado,Saumon fumé,Nautica,,d,3.0,652.0,,2.94,8.0,1.6
+mejillones en escabeche,Mejillones en escabeche,Hacendado,,b,4.0,624.0,0.472,1.3,6.7,1.13
+leche entera asturiana,LECHE UHT ENTERA,Central Lechera Asturiana,,c,1.0,264.0,4.6,0.0001,3.6,2.4
+leche desnatada,Leche Semi desnatada,Central Lechera Asturiana,,b,1.0,192.0,4.7,0.1,1.6,1.1
+yogur natural,Yogur griego natural,Hacendado,,c,3.0,540.0,3.12,0.0,8.64,5.36
+garcia vaquero,García Vaquero Semicurado,Garcia Baquero,,d,,1745.0,1.5,1.8,34.5,23.4
+queso fresco 0%,Cottage Cheese,Milbona,,b,3.0,410.0,2.8,0.52,4.5,3.0
+huevos frescos,Queso crema suave,"Entrepinares,Hacendado",,d,4.0,994.0,2.5,1.0,23.0,16.0
+mantequilla tradicional,Mantequilla tradicional Rulo,central lechera asturiana,,e,2.0,3105.0,0.4,0.03,82.0,55.0
+aceite de girasol,Картофельные чипсы со вкусом парики,Pringles,,d,4.0,2180.0,3.2,1.28,30.0,2.8
+aceite de oliva virgen extra,Gazpacho Original,"Alvalle, PepsiCo",,a,3.0,174.0,3.3,0.62,2.4,0.4
+aceite de coco virgen,Aceite de coco virgen,Hacendado,,e,2.0,3700.0,0.0,0.0,100.0,94.5
+manteca de cerdo,Manteca de cerdo,Hacendado,,d,4.0,3761.0,0.1,0.1,99.0,39.0
+peras,Juver Disfruta Pera Pina,Juver,,d,4.0,105.0,4.3000001907349,0.0099999997764826,0.10000000149012,0.0
+datiles,Dátiles desecados sin hueso,Hacendado,,c,1.0,1247.0,61.7,0.0,0.5,0.0
+aceitunas rellenas de anchoa,Aceitunas manzanilla rellenas de anchoa,Hacendado,,d,4.0,618.0,0.5,2.6,15.0,2.9
+bayas de goji,Muesli - Granada y bayas de goji,"Crownfield,Lidl",,a,3.0,1531.0,4.2,0.24,6.2,1.7
+arandanos deshidratados,Arándanos deshidratados,Hacendado,,d,3.0,1447.0,67.8,0.0,1.4,0.3
+cacahuetes tostados salados,Peanuts roasted & salted,Alesto,,b,3.0,2562.0,5.3,0.8,51.4,7.9
+smoothie fresa,Smoothie fresa,Hacendado,,c,1.0,197.0,9.4,0.01,0.1,0.0
+cebolleta roja,Cebolleta roja,Huerta del Molino,,a,1.0,,,,,
+coliflor,Migas de coliflor,Hacendado,,b,1.0,83.0,1.6,0.39,0.0,0.0
+calabacines union,Cala Pasta 100% espirales de calabacín,Verdifresh,,a,1.0,75.0,2.5,0.02,0.3,0.08
+palitos de zanahoria,Palitos de zanahoria,Hoy me Cuido,,a,1.0,142.0,6.8,0.0,0.3,0.05
+lentejas,Pasta Lentejas Mercadona,"Felicia,Hacendado",,a,,1412.0,1.2,0.01,1.7,0.4
+coliflor brocoli y zanahoria,"Coliflor, brócoli y zanahoria",Hacendado,,a,1.0,133.0,3.4,0.05,0.3,0.0
+garbanzos cocidos,Garbanzo cocido,Hacendado,,b,3.0,379.0,0.7,0.8,2.2,0.5
+patatas udapa,Patata para tortilla,Udapa,,a,1.0,280.0,0.5,0.1,0.6,0.1
+patatas para tortilla,Tortillas integrales para fajitas 8 unidades - Eliges - 320g,Eliges,,c,4.0,1134.0,1.7,1.6,7.3,2.1
+azucar blanco,Azúcar blanco,Azucarera,,e,2.0,1700.0,100.0,0.0,0.0,0.0
+snickers,,Snickers,,e,4.0,2018.0,51.8,0.62875,22.5,7.9
+toblerone,Toblerone,Toblerone,,e,4.0,2209.0,60.0,0.12,28.0,17.0
+helado de pistacho,Helado pistacho,Hacendado,,e,4.0,1510.0,29.0,0.12,24.0,16.0
+gominolas,Mix gominolas,Hacendado,,e,4.0,1438.0,57.0,0.12,0.2,0.2
+gran aroma natural,Gran aroma natural,Marcilla,,b,1.0,,,,,
+te jengibre limon,Organic Kombucha Jengibre y Limón,Komvida,,b,3.0,42.0,1.85,0.013,0.13,0.1
+colacao,Cola Cao El Original,ColaCao,,d,4.0,288.0,9.1,0.12,1.7,1.1
+agua mineral,Agua Mineral Natural,Mondariz,,a,1.0,0.0,0.0,0.119,0.0,0.0
+coca cola,Orange juice,Coca cola,,e,4.0,165.0,17.0,0.126,0.0,0.0
+zumo de manzana,Suc de mere,Solevita,,c,1.0,197.0,10.5,0.0,0.1,0.1
+zumo de tomate,100% pur jus tomate,"CMI (Carrefour Marchandises Internationales),Carrefour,Groupe Carrefour",,b,3.0,52.0,2.7,0.3,0.1,0.0
