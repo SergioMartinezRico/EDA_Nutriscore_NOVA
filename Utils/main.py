@@ -121,7 +121,7 @@ titulos = ['Contenido de Azúcares (g/100g)', 'Contenido de Grasa (g/100g)', 'Co
 
 # Creamos la figura que contendrá los 3 gráficos
 fig, axes = plt.subplots(1, 3, figsize=(20, 7), sharey=False)
-plt.suptitle('H1: Distribución de Nutrientes Clave por Grado NutriScore (Tendencia Creciente)', fontsize=16, y=1.02)
+plt.suptitle('H1: Distribución de Nutrientes Clave por Grado NutriScore (Tendencia Creciente)', fontsize=16)
 
 for i, nutriente in enumerate(nutrientes):
     sns.boxplot(
@@ -194,7 +194,7 @@ ax=sns.barplot(
 ax.xaxis.set_ticks_position('top')
 ax.xaxis.set_label_position('top')
 ax.spines['bottom'].set_visible(False)
-plt.title('H2: NutriScore Promedio por Nivel de Procesamiento NOVA,', pad=20)
+plt.title('H2: NutriScore Promedio por Nivel de Procesamiento NOVA,')
 plt.xlabel('Grupo NOVA (1: Mínimo Procesamiento, 4: Ultraprocesado)')
 plt.ylabel('NutriScore Promedio (Peor → E, Mejor → A)')
 plt.grid(axis='y', linestyle='--', alpha=0.7)
@@ -231,11 +231,11 @@ h2_long_df = h2_plot_df.reset_index().melt(
 # Convertir las letras a mayúsculas para la leyenda
 h2_long_df['NutriScore'] = h2_long_df['NutriScore'].str.upper()
 
-nova_a_graficar = 1 
+tipo_nova = 1 
 # ----------------------------------------------------------------------------------
 
 # 2. Preparación de datos
-data = h2_plot_df.loc[nova_a_graficar]
+data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
@@ -255,7 +255,7 @@ wedges, texts, autotexts = ax.pie(
 )
 
 # 4. Configuración y Leyenda
-ax.set_title(f'H2: NutriScore en Grupo NOVA {nova_a_graficar}', fontsize=16)
+ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
 # Ajuste Básico de Fuente de Porcentajes
@@ -280,11 +280,11 @@ ax.legend(
 plt.tight_layout()
 plt.savefig("../Img/h2_pie_nova1.jpg")
 
-nova_a_graficar = 2 
+tipo_nova = 2 
 # ----------------------------------------------------------------------------------
 
 # 2. Preparación de datos
-data = h2_plot_df.loc[nova_a_graficar]
+data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
@@ -304,7 +304,7 @@ wedges, texts, autotexts = ax.pie(
 )
 
 # 4. Configuración y Leyenda
-ax.set_title(f'H2: NutriScore en Grupo NOVA {nova_a_graficar}', fontsize=16)
+ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
 # Ajuste Básico de Fuente de Porcentajes
@@ -329,11 +329,11 @@ ax.legend(
 plt.tight_layout()
 plt.savefig("../Img/h2_pie_nova2.jpg")
 
-nova_a_graficar = 3 
+tipo_nova = 3 
 # ----------------------------------------------------------------------------------
 
 # 2. Preparación de datos
-data = h2_plot_df.loc[nova_a_graficar]
+data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
@@ -353,7 +353,7 @@ wedges, texts, autotexts = ax.pie(
 )
 
 # 4. Configuración y Leyenda
-ax.set_title(f'H2: NutriScore en Grupo NOVA {nova_a_graficar}', fontsize=16)
+ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
 # Ajuste Básico de Fuente de Porcentajes
@@ -379,11 +379,11 @@ plt.tight_layout()
 plt.savefig("../Img/h2_pie_nova3.jpg")
 
 
-nova_a_graficar = 4
+tipo_nova = 4
 # ----------------------------------------------------------------------------------
 
 # 2. Preparación de datos
-data = h2_plot_df.loc[nova_a_graficar]
+data = h2_plot_df.loc[tipo_nova]
 data = data[data > 0] # Elimina los grados NutriScore con 0% de representación
     
 # Mapeamos los colores a los grados NutriScore que están presentes en los datos
@@ -403,7 +403,7 @@ wedges, texts, autotexts = ax.pie(
 )
 
 # 4. Configuración y Leyenda
-ax.set_title(f'H2: NutriScore en Grupo NOVA {nova_a_graficar}', fontsize=16)
+ax.set_title(f'H2: NutriScore en Grupo NOVA {tipo_nova}', fontsize=16)
 ax.axis('equal') # Asegura la forma redonda
 
 # Ajuste Básico de Fuente de Porcentajes
@@ -506,7 +506,7 @@ titulos = [
 
 #  Creamos la figura que contendrá los 3 gráficos (1 fila, 3 columnas)
 fig, axes = plt.subplots(1, 3, figsize=(20, 7), sharey=False)
-plt.suptitle('H4: Variabilidad Nutricional dentro de Productos Ultraprocesados (NOVA 4)', fontsize=16, y=1.02)
+plt.suptitle('H4: Variabilidad Nutricional dentro de Productos Ultraprocesados (NOVA 4)', fontsize=16)
 
 for i, nutriente in enumerate(nutrientes):
     sns.boxplot(
@@ -552,8 +552,15 @@ nova_df['Grupo NOVA'] = nova_df['nova_group'].astype(int)
 
 #graficos
 
+#graficos
+
 fig, axes = plt.subplots(1, 2, figsize=(15, 6))
 plt.suptitle('H5: Distribución de NutriScore y NOVA en la Lista de la Compra (Alimentos Consumidos)', fontsize=16)
+max_nutri = nutri_df['Porcentaje'].max()
+ymax_nutri = max_nutri * 1.15  
+
+max_nova = nova_df['Porcentaje'].max()
+ymax_nova = max_nova * 1.15 
 
 # GRAFICO 1: DISTRIBUCIÓN NUTRISCORE
 sns.barplot(
@@ -567,6 +574,8 @@ sns.barplot(
 axes[0].set_title('NutriScore en la Lista de la Compra')
 axes[0].set_xlabel('Grado NutriScore')
 axes[0].set_ylabel('Porcentaje de Productos (%)')
+axes[0].grid(axis='y', linestyle='--', alpha=0.7)
+axes[0].set_ylim(0, ymax_nutri) 
 axes[0].grid(axis='y', linestyle='--', alpha=0.7)
 
 # Etiquetas
@@ -587,6 +596,9 @@ sns.barplot(
 axes[1].set_title('Grupo NOVA en la Lista de la Compra')
 axes[1].set_xlabel('Grupo NOVA (1: Mínimo Proc. | 4: Ultraproc.)')
 axes[1].set_ylabel('Porcentaje de Productos (%)')
+axes[1].grid(axis='y', linestyle='--', alpha=0.7)
+
+axes[1].set_ylim(0, ymax_nova)
 axes[1].grid(axis='y', linestyle='--', alpha=0.7)
 
 # Etiquetas
